@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Kai Vance | AI Student & Machine Learning Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFF6E5;
+      --black: #000000;
+      --yellow: #FFD23F;
+      --teal: #3BCEAC;
+      --pink: #EE4266;
+      --purple: #8338EC;
+      --cyan: #00F5D4;
+      --white: #FFFFFF;
+      --shadow: 6px 6px 0px #000000;
+      --shadow-lg: 8px 8px 0px #000000;
+      --border: 3px solid #000000;
+      --font-display: 'Archivo Black', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; max-width: 100vw; width: 100%; }
+    body { background-color: var(--bg); color: var(--black); font-family: var(--font-body); line-height: 1.5; font-size: 16px; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { background: var(--bg); border-bottom: var(--border); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: var(--font-display); font-size: 1.6rem; background: var(--yellow); padding: 6px 14px; border: var(--border); box-shadow: 3px 3px 0px #000; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { font-weight: 700; text-transform: uppercase; padding: 6px 10px; border: 2px solid transparent; }
+    .nav-links a:hover { background: var(--cyan); border: var(--border); box-shadow: 2px 2px 0px #000; }
+
+    /* Contact Page Specific */
+    .contact-section { padding: 40px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .contact-info-card { background: var(--yellow); border: var(--border); box-shadow: var(--shadow-lg); padding: 30px; }
+    .contact-form-card { background: var(--white); border: var(--border); box-shadow: var(--shadow-lg); padding: 30px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .form-control { font-family: var(--font-body); font-size: 1rem; padding: 12px; border: var(--border); box-shadow: 3px 3px 0px #000; background: #fff; width: 100%; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; font-family: var(--font-display); font-size: 1rem; text-transform: uppercase; background: var(--yellow); color: var(--black); border: var(--border); box-shadow: var(--shadow); cursor: pointer; }
+    .badge { display: inline-block; padding: 6px 14px; font-family: var(--font-display); font-size: 0.85rem; text-transform: uppercase; border: var(--border); background: var(--white); font-weight: 700; margin-bottom: 16px; }
+    
+    @media (max-width: 768px) { 
+      .container { padding: 0 15px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 20px; }
+      .contact-info-card, .contact-form-card { padding: 20px; }
+      .footer-grid { flex-direction: column; gap: 20px; text-align: center; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      
+      .nav-links { display: none; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: var(--border);
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+      .mobile-menu-btn { display: block; }
+    }
+    .mobile-menu-btn { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">KAI VANCE ⚡</a>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">MENU ☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about" onclick="closeMenu()">ABOUT</a></li>
+        <li><a href="index.html#projects" onclick="closeMenu()">PROJECTS</a></li>
+        <li><a href="index.html#sandbox" onclick="closeMenu()">AI SANDBOX</a></li>
+        <li><a href="index.html#skills" onclick="closeMenu()">SKILLS</a></li>
+        <li><a href="index.html#experience" onclick="closeMenu()">EXPERIENCE</a></li>
+        <li><a href="contact.html" class="badge" style="background: var(--yellow);">LET'S TALK ✉</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="display: none;">Contact Kai Vance - AI Engineering & Research</h1>
+    <section class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <span class="badge" style="background: var(--pink); color: #fff;">LET'S CONNECT</span>
+          <h2 style="font-size: 2.8rem; line-height: 1.1; margin-bottom: 16px; font-family: var(--font-display);">BUILD THE FUTURE OF AI TOGETHER.</h2>
+          <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 24px;">I am actively interviewing for Full-Time Machine Learning Engineer roles starting Summer 2025.</p>
+          <div style="font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">EMAIL:</div>
+          <div style="font-family: var(--font-display); font-size: 1.2rem; background: var(--white); padding: 10px; border: 2px solid #000; margin-bottom: 24px;">kai.vance@cs.cmu.edu</div>
+        </div>
+
+        <div class="contact-form-card">
+          <form id="contactForm">
+            <div class="form-group"><label>YOUR NAME *</label><input type="text" required class="form-control"></div>
+            <div class="form-group"><label>EMAIL *</label><input type="email" required class="form-control"></div>
+            <div class="form-group"><label>MESSAGE *</label><textarea required rows="5" class="form-control"></textarea></div>
+            <button type="submit" class="btn" style="width: 100%;">SEND MESSAGE 🚀</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="margin-top: 40px;">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="logo">
+          KAI VANCE ⚡
+        </div>
+
+        <div style="font-weight: 700; font-size: 0.9rem;">
+          PITTSBURGH, PA • CMU CAMPUS
+        </div>
+
+        <div>
+          <a href="javascript:window.scrollTo({ top: 0, behavior: 'smooth' });" class="btn btn-teal" style="font-size: 0.8rem; padding: 6px 12px;">
+            BACK TO TOP ⬆
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="padding-top: 20px; font-size: 0.85rem; color: #AAA;">
+        <div>© 2025 Kai Vance. Designed with Neo-Brutalist Energy.</div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    function closeMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.remove('active');
+    }
+
+    document.getElementById('contactForm').onsubmit = (e) => {
+      e.preventDefault();
+      alert("Message sent successfully!");
+    };
+  </script>
+<script data-siteagent="nav-guard">(function(){
+function run(){
+  var h=document.querySelector('body > header, header, body > nav, nav');
+  if(!h)return;
+  var cs=getComputedStyle(h);
+  if(cs.position==='fixed'||cs.position==='sticky'){pad(h);return;}
+  if(h.getBoundingClientRect().top+window.scrollY>160)return; // menu isn't at the top of the page
+  var bg=cs.backgroundColor;
+  if(!bg||bg==='transparent'||/rgba\(.*,\s*0\)$/.test(bg)){
+    var b=getComputedStyle(document.body).backgroundColor;
+    h.style.backgroundColor=(b&&b!=='rgba(0, 0, 0, 0)'&&b!=='transparent')?b:'#ffffff';
+  }
+  var p=h.parentElement,tall=p===document.body||(p&&p.getBoundingClientRect().height>document.documentElement.scrollHeight*0.8);
+  if(tall){h.style.position='sticky';h.style.top='0';}
+  else{var r=h.getBoundingClientRect(),ph=document.createElement('div');ph.style.height=r.height+'px';h.parentNode.insertBefore(ph,h);h.style.position='fixed';h.style.top='0';h.style.left='0';h.style.right='0';}
+  h.style.zIndex='1000';
+  pad(h);
+}
+function pad(h){var hh=Math.round(h.getBoundingClientRect().height)+12;var s=document.createElement('style');s.textContent='html{scroll-behavior:smooth}[id]{scroll-margin-top:'+hh+'px}';document.head.appendChild(s);}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+})();</script></body>
+</html>

@@ -46,11 +46,9 @@
       font-size: 16px;
     }
 
-    /* Typography */
-    h1, h2, h3, h4, .font-display {
-      font-family: var(--font-display);
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
+    /* Scroll Margin */
+    section[id] {
+      scroll-margin-top: 80px;
     }
 
     a {
@@ -140,7 +138,7 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       background: var(--bg);
       border-bottom: var(--border);
       padding: 16px 0;
@@ -1082,7 +1080,7 @@
         <li><a href="#sandbox" onclick="closeMenu()">AI SANDBOX</a></li>
         <li><a href="#skills" onclick="closeMenu()">SKILLS</a></li>
         <li><a href="#experience" onclick="closeMenu()">EXPERIENCE</a></li>
-        <li><a href="#contact" class="badge" style="background: var(--yellow);">LET'S TALK ✉</a></li>
+        <li><a href="contact.html" class="badge" style="background: var(--yellow);">LET'S TALK ✉</a></li>
       </ul>
     </div>
   </header>
@@ -1869,5 +1867,25 @@
       }, 700);
     }
   </script>
-</body>
+<script data-siteagent="nav-guard">(function(){
+function run(){
+  var h=document.querySelector('body > header, header, body > nav, nav');
+  if(!h)return;
+  var cs=getComputedStyle(h);
+  if(cs.position==='fixed'||cs.position==='sticky'){pad(h);return;}
+  if(h.getBoundingClientRect().top+window.scrollY>160)return; // menu isn't at the top of the page
+  var bg=cs.backgroundColor;
+  if(!bg||bg==='transparent'||/rgba\(.*,\s*0\)$/.test(bg)){
+    var b=getComputedStyle(document.body).backgroundColor;
+    h.style.backgroundColor=(b&&b!=='rgba(0, 0, 0, 0)'&&b!=='transparent')?b:'#ffffff';
+  }
+  var p=h.parentElement,tall=p===document.body||(p&&p.getBoundingClientRect().height>document.documentElement.scrollHeight*0.8);
+  if(tall){h.style.position='sticky';h.style.top='0';}
+  else{var r=h.getBoundingClientRect(),ph=document.createElement('div');ph.style.height=r.height+'px';h.parentNode.insertBefore(ph,h);h.style.position='fixed';h.style.top='0';h.style.left='0';h.style.right='0';}
+  h.style.zIndex='1000';
+  pad(h);
+}
+function pad(h){var hh=Math.round(h.getBoundingClientRect().height)+12;var s=document.createElement('style');s.textContent='html{scroll-behavior:smooth}[id]{scroll-margin-top:'+hh+'px}';document.head.appendChild(s);}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+})();</script></body>
 </html>
